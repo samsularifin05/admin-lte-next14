@@ -7,7 +7,7 @@ const Footer = () => {
         <b>Version</b> 0.1
       </div>
       <strong>
-        Copyright © 2023 <a href="/dashboard">SAgayaku</a>.
+        Copyright © 2023 <a href="/dashboard">Samsul Arifin</a>.
       </strong>{" "}
       All rights reserved.
     </footer>

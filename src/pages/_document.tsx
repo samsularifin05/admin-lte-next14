@@ -1,6 +1,6 @@
+import { LoadingApp } from "@/components";
 import { Html, Head, Main, NextScript } from "next/document";
 import { Suspense } from "react";
-import Skeleton from "react-loading-skeleton";
 
 export default function Document() {
   return (
@@ -8,7 +8,7 @@ export default function Document() {
       <Head />
       <body className="sidebar-mini">
         <div id="app" className="sidebar-mini wrapper">
-          <Suspense fallback={<Skeleton width="100%" height={1000} />}>
+          <Suspense fallback={<LoadingApp />}>
             <Main />
             <NextScript />
           </Suspense>

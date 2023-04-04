@@ -1,5 +1,11 @@
 import { atom } from "recoil";
-import { calculateWindowSize, getItem, removeItem, setItem } from "./function";
+import {
+  LoadingApp,
+  calculateWindowSize,
+  getItem,
+  removeItem,
+  setItem
+} from "./function";
 import { InpuSelect, InputField } from "./Filed";
 import Row from "./Row";
 import Col from "./Col";
@@ -53,6 +59,7 @@ const toggleSidebarMenu = atom({
 });
 
 export {
+  LoadingApp,
   removeItem,
   setItem,
   PanelContent,

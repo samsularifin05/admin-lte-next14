@@ -1,5 +1,7 @@
+import { Logo } from "@/styles";
 import { doDecrypt, doEncrypt } from "./encrypt";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export const getItem = (nama: string) => {
   if (typeof window !== "undefined") {
@@ -7,6 +9,20 @@ export const getItem = (nama: string) => {
       ? []
       : doDecrypt(JSON.parse(localStorage.getItem(doEncrypt(nama)) || "[]"));
   }
+};
+
+export const LoadingApp = () => {
+  return (
+    <div className="preloader flex-column justify-content-center align-items-center">
+      <Image
+        className="animation__shake"
+        src={Logo}
+        alt="AdminLTELogo"
+        height="60"
+        width="60"
+      />
+    </div>
+  );
 };
 
 export const setItem = (nama: string, data: any) => {

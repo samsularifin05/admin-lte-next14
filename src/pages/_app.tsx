@@ -5,9 +5,9 @@ import dynamic from "next/dynamic";
 import "@/styles/index.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Skeleton from "react-loading-skeleton";
 import { RecoilRoot } from "recoil";
 import { Suspense } from "react";
+import { LoadingApp } from "@/components";
 
 const Layout = dynamic(() => import("@/components/themes"), {
   suspense: true
@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <title>Admin Template</title>
         </Head>
 
-        <Suspense fallback={<Skeleton width="100%" height={1000} />}>
+        <Suspense fallback={<LoadingApp />}>
           <Component {...pageProps} />
         </Suspense>
       </Layout>

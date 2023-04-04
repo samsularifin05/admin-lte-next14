@@ -12,15 +12,15 @@ const Sidebar = lazy(() => import("./sidebar"));
 import { themesSetting } from "@/recoil";
 import { screenSize, toggleSidebarMenu } from "../utils";
 import {
+  LoadingApp,
   addWindowClass,
   calculateWindowSize,
   getItem,
   removeWindowClass,
   useWindowSize
 } from "../utils/function";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { withRouter } from "next/router";
-import Skeleton from "react-loading-skeleton";
 
 const Layout = ({ children, router }: any) => {
   const theme = useRecoilValue(themesSetting);
@@ -37,6 +37,7 @@ const Layout = ({ children, router }: any) => {
 
   const windowSize = useWindowSize();
   const setTheme = useSetRecoilState(themesSetting);
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
     if (getItem("userdata").token === undefined) {
@@ -59,14 +60,16 @@ const Layout = ({ children, router }: any) => {
       addWindowClass("sidebar-closed");
       addWindowClass("sidebar-collapse");
     }
+
+    setTimeout(() => {
+      setloading(false);
+    }, 1000);
   }, [windowSize, sidebar, setTheme, screen.screenSize, setSizeValue, router]);
 
   RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false;
 
-  //   console.log(getItem("userdata").token);
-
   return (
-    <Suspense fallback={<Skeleton width="100%" height={1000} />}>
+    <Suspense fallback={<LoadingApp />}>
       <div className="wrapper">
         {theme.header && <Header />}
         {theme.sidebar && <Sidebar />}
@@ -80,6 +83,7 @@ const Layout = ({ children, router }: any) => {
           onKeyDown={() => {}}
         />
       </div>
+      {loading && <LoadingApp />}
     </Suspense>
   );
 };
