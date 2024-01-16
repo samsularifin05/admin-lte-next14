@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import menu from "./sidebar/menu";
 import SidebarNavList from "./sidebar/SidebarNavList";
 
