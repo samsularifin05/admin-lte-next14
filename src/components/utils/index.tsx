@@ -6,7 +6,7 @@ import {
   removeItem,
   setItem
 } from "./function";
-import { InpuSelect, InputField } from "./Filed";
+import { InputField } from "./Filed";
 import Row from "./Row";
 import Col from "./Col";
 import Button from "./Button";
@@ -69,7 +69,6 @@ export {
   Row,
   isLoading,
   modalShow,
-  InpuSelect,
   InputField,
   screenSize,
   toggleSidebarMenu,

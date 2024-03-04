@@ -1,6 +1,5 @@
-import React, { useCallback } from "react";
-import { Controller, FormProvider } from "react-hook-form";
-import Select from "react-select";
+import React from "react";
+import { FormProvider } from "react-hook-form";
 
 interface IFieldTextProps {
   name?: string;
@@ -108,41 +107,6 @@ const InputField = React.forwardRef((props: IFieldTextProps, ref: any) => {
   );
 });
 
-const InpuSelect = (props: IFieldProps) => {
-  return (
-    <div className="form-group">
-      <label htmlFor="">{props.label}</label>
-      <Controller
-        name={props.name}
-        control={props.control}
-        defaultValue=""
-        render={({ field }) => (
-          <Select
-            id={props.id}
-            isClearable={true}
-            options={props.options}
-            autoFocus={props.autoFocus}
-            closeMenuOnSelect={props.closeMenuOnSelect}
-            isMulti={props.isMulti}
-            isSearchable={props.isSearchable}
-            {...field}
-            // value={first}
-            // onChange={(value) => setfirst(value)}
-            placeholder={props.placeholder}
-            defaultValue={props.defaultValue}
-          />
-        )}
-      />
-
-      {props.errors && (
-        <span className="error invalid-feedback">
-          {props.errors.message || ""}
-        </span>
-      )}
-    </div>
-  );
-};
-
 function Form({ onSubmit, children, ...props }: any) {
   return (
     <FormProvider {...props}>
@@ -150,4 +114,4 @@ function Form({ onSubmit, children, ...props }: any) {
     </FormProvider>
   );
 }
-export { Form, InpuSelect, InputField };
+export { Form, InputField };
