@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "mysql2": "^3.7.0",
     "next": "^14.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -17,8 +16,7 @@
     "react-hot-toast": "^2.4.1",
     "react-loading-skeleton": "^3.2.0",
     "react-select": "^5.7.2",
-    "recoil": "^0.7.7",
-    "serverless-mysql": "^1.5.5"
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
