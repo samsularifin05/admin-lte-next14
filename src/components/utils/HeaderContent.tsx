@@ -16,7 +16,7 @@ const HeaderContent: React.FC<props> = (props) => (
           <div className="col-sm-6">
             <ol className="breadcrumb float-sm-right">
               <li className="breadcrumb-item">
-                <Link href="#">{props?.menu}</Link>
+                <div>{props?.menu}</div>
               </li>
               <li className="breadcrumb-item active">{props?.submenu}</li>
             </ol>

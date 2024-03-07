@@ -1,13 +1,14 @@
 import React from "react";
 import menu from "./sidebar/menu";
 import SidebarNavList from "./sidebar/SidebarNavList";
+import Link from "next/link";
 
 const Sidebar = () => {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
-      <a href="/dashboard" className="brand-link text-center">
+      <div className="brand-link text-center">
         <span className="brand-text font-weight-light text-center">ADMIN</span>
-      </a>
+      </div>
       <div className="sidebar">
         <nav className="mt-2">
           <ul

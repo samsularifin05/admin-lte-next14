@@ -36,14 +36,14 @@ const Header = (props: any) => {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <div className="nav-item dropdown" onMouseEnter={toggleMenu}>
-            <a href="#" className="nav-link dropdown-toggle user-action">
+            <div className="nav-link dropdown-toggle user-action">
               <img
                 src="https://www.tutorialrepublic.com/examples/images/avatar/2.jpg"
                 className="avatarProfile"
                 alt="Avatar"
               />{" "}
               Sam <b className="caret"></b>
-            </a>
+            </div>
             <div
               className={`dropdown-menu ${menu ? "show" : ""}`}
               onMouseLeave={() => setMenu(false)}

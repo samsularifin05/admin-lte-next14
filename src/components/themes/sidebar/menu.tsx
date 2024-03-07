@@ -22,7 +22,7 @@ const menu: Array<Menu> = [
     title: "Dashboard"
   },
   {
-    path: "",
+    path: "/",
     icon: "nav-icon fas fa-database",
     title: "Data Master",
     children: [
@@ -37,12 +37,12 @@ const menu: Array<Menu> = [
     ]
   },
   {
-    path: "",
+    path: "/",
     icon: "nav-icon fas fa-database",
     title: "Menu Level",
     children: [
       {
-        path: "#",
+        path: "/",
         title: "Level 1"
       },
       {
@@ -51,21 +51,21 @@ const menu: Array<Menu> = [
         icon: "nav-icon fas far fa-circle nav-icon",
         children: [
           {
-            path: "#",
+            path: "/",
             title: "Sub Level 2"
           },
           {
-            path: "#",
+            path: "/",
             title: "Sub Level 3"
           },
           {
-            path: "#",
+            path: "/",
             title: "Sub Level 4"
           }
         ]
       },
       {
-        path: "#",
+        path: "/",
         title: "Level 3"
       }
     ]
